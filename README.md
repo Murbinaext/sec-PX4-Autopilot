@@ -88,6 +88,20 @@ cd PX4-Autopilot
 make px4_sitl
 ```
 
+To build with MAVLink encryption enabled for the `cubepilot_cubeorange_default` target:
+
+```bash
+make cubepilot_cubeorange_default CMAKE_ARGS="-DMAVLINK_ENABLE_ENCRYPTION=ON"
+```
+
+If you want to explicitly disable encryption, use:
+
+```bash
+make cubepilot_cubeorange_default CMAKE_ARGS="-DMAVLINK_ENABLE_ENCRYPTION=OFF"
+```
+
+If you omit `CMAKE_ARGS`, encryption will default to `OFF`.
+
 > [!NOTE]
 > See the [Development Guide](https://docs.px4.io/main/en/development/development.html) for toolchain setup and build options.
 
